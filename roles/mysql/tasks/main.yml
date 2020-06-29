@@ -1,0 +1,11 @@
+---
+# tasks file for mysql
+
+- name: Cria banco de dados do Wordpress
+  mysql_db: name={{ wp_mysql_db  }}
+
+- name: Cria o usuario do banco de dados Wordpress
+  mysql_user:
+    name={{ wp_mysql_user }}
+    password={{ wp_mysql_password }}
+    priv=*.*:ALL

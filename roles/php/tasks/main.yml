@@ -1,0 +1,9 @@
+---
+# tasks file for php
+
+- name: Instala extensoes do PHP 7.4
+  apt: name={{ item }} state=present
+  become: yes
+  with_items:
+    - php7.4-gd
+    - php-ssh2
